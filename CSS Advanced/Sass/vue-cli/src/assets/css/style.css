@@ -1,0 +1,171 @@
+/* Variables.css */
+:root {
+    --font-size-initial: 12px;
+    --font-size-lv2: 14px;
+    --font-size-lv3: 16px;
+    --font-size-lv4: 18px;
+
+    --spacing-site: 2rem;
+
+    --color-text-main: #000;
+}
+
+
+/* Reset.css */
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
+/* Typography.css */
+html{
+    font: var(--font-size-initial, 12px)/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@media screen and (min-width: 500px){
+    html{ font-size: var(--font-size-lv2, 14px); }
+}
+
+@media screen and (min-width: 700px){
+    html{ font-size: var(--font-size-lv3, 16px); }
+}
+
+@media screen and (min-width: 1600px){
+    html{ font-size: var(--font-size-lv4, 18px); }
+}
+body, table, th, td, form, input, textarea, option, select{
+    font: inherit;
+}
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.2;
+    padding-bottom: 0.5em;
+}
+h1{ font-size: 2.441em; }
+h2{ font-size: 1.953em; }
+h3{ font-size: 1.563em; }
+h4{ font-size: 1.25em; }
+h5{ font-size: 1em; }
+h6{ font-size: 1em; font-weight: bold;}
+
+p, ul, ol{
+    padding-bottom: 1.5em; 
+}
+
+ul, ol{
+    padding-left: 2em; 
+}
+
+li{
+    list-style-position: inside;
+    padding-left: 1rem; 
+}
+
+/* layout.css */
+body{
+    color: var(--color-text-main, #000);
+}
+.site{
+    padding: var(--spacing-site, 2em);
+}
+body p:first-child{
+    color: blue;
+}
+
+/* navigation.css */
+.navigation{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+.navigation ul{
+    padding: 0;
+    margin: 0;
+}
+.navigation ul li{
+    display: block;
+    list-style: none outside;
+    padding: 1em 0;
+}
+.navigation a{
+    display: block;
+    padding: 1em 2em;
+    background: #fff;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 0 1.5rem 0.1rem rgba(0, 0, 0, 0.2)
+}
+.navigation a:before{
+    margin-left: 1em;
+}
+#nav-main-toggle{
+    display: none;
+}
+#nav-main-toggle:checked + .site-header .navigation{
+    display: flex;
+}
+#nav-main-toggle:checked + .site-header .nav-toggle:before{
+    content: '\f00d';
+
+}
+.nav-toggle{
+    position: fixed;
+    top: var(--spacing-site, 2rem);
+    left: var(--spacing-site, 2rem);
+    z-index: 1000;
+    font-size: 2rem;
+    padding: 0 0.5rem;
+}
+#nav-toggle-right{
+    left: inherit;
+    right: var(--spacing-site, 2rem);
+
+}
+
+.nav-toggle span{
+    display: none;
+}
+.nav-toggle:before{
+    margin-right: 1rem;
+    content: '\f0c9';
+}
+/* site-header.css */
+
+.site-branding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.site-title{
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 0.1rem; 
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #DDD;
+}
+.site-description{
+    font-style: italic;
+    font-family: serif;
+    font-size: 110%;
+}
+
+
+
+/* site-footer.css */
+.site-footer{
+    
+}
